@@ -13,7 +13,11 @@ const {
   deleteProductValidator,
 } = require("../validators/productValidator");
 const authController = require("../Controller/authController");
+const reviewRoute = require("./reviewRoute");
+
 const router = express.Router();
+
+router.use("/:productId/reviews", reviewRoute);
 
 router
   .route("/")
